@@ -19,6 +19,31 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+//    return [tableData count];
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *TableIdentifier = @"TableItem";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableIdentifier];
+    }
+    
+  //  cell.textLabel.text = [NSString stringWithFormat:@"ID: %@",[[tableData objectAtIndex:indexPath.row] objectForKey:@"id"]];
+  //  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
+    //                             [[tableData objectAtIndex:indexPath.row] objectForKey:@"first_name"],
+   //                              [[tableData objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

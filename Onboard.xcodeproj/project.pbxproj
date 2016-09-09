@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		4D0DA7CE1D81B3480010E167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA7CD1D81B3480010E167 /* main.m */; };
 		4D0DA7D11D81B3480010E167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA7D01D81B3480010E167 /* AppDelegate.m */; };
-		4D0DA7D41D81B3480010E167 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA7D31D81B3480010E167 /* ViewController.m */; };
 		4D0DA7D71D81B3480010E167 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0DA7D51D81B3480010E167 /* Main.storyboard */; };
 		4D0DA7D91D81B3480010E167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D0DA7D81D81B3480010E167 /* Assets.xcassets */; };
 		4D0DA7DC1D81B3480010E167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0DA7DA1D81B3480010E167 /* LaunchScreen.storyboard */; };
 		4D0DA7E71D81B3480010E167 /* OnboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA7E61D81B3480010E167 /* OnboardTests.m */; };
 		4D0DA7F21D81B3480010E167 /* OnboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA7F11D81B3480010E167 /* OnboardUITests.m */; };
+		4D1F72B71D81E68F00D6F2DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F72B51D81E68F00D6F2DC /* ViewController.m */; };
+		4D1F72B81D81E68F00D6F2DC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F72B61D81E68F00D6F2DC /* ViewController.xib */; };
+		4D1F72BB1D81E88800D6F2DC /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F72BA1D81E88800D6F2DC /* Users.m */; };
+		4D1F72CB1D83577F00D6F2DC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F72C91D83577F00D6F2DC /* DetailViewController.m */; };
+		4D1F72CC1D83577F00D6F2DC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F72CA1D83577F00D6F2DC /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +43,6 @@
 		4D0DA7CD1D81B3480010E167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4D0DA7CF1D81B3480010E167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D0DA7D01D81B3480010E167 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4D0DA7D21D81B3480010E167 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4D0DA7D31D81B3480010E167 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4D0DA7D61D81B3480010E167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D0DA7D81D81B3480010E167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D0DA7DB1D81B3480010E167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,15 @@
 		4D0DA7ED1D81B3480010E167 /* OnboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0DA7F11D81B3480010E167 /* OnboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardUITests.m; sourceTree = "<group>"; };
 		4D0DA7F31D81B3480010E167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D1F72B41D81E68F00D6F2DC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		4D1F72B51D81E68F00D6F2DC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		4D1F72B61D81E68F00D6F2DC /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
+		4D1F72B91D81E88800D6F2DC /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		4D1F72BA1D81E88800D6F2DC /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		4D1F72BC1D81EC8500D6F2DC /* DebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugMacros.h; sourceTree = "<group>"; };
+		4D1F72C81D83577F00D6F2DC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		4D1F72C91D83577F00D6F2DC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
+		4D1F72CA1D83577F00D6F2DC /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ../DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +112,19 @@
 		4D0DA7CB1D81B3480010E167 /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
+				4D1F72C81D83577F00D6F2DC /* DetailViewController.h */,
+				4D1F72C91D83577F00D6F2DC /* DetailViewController.m */,
+				4D1F72CA1D83577F00D6F2DC /* DetailViewController.xib */,
+				4D1F72B41D81E68F00D6F2DC /* ViewController.h */,
+				4D1F72B51D81E68F00D6F2DC /* ViewController.m */,
+				4D1F72B61D81E68F00D6F2DC /* ViewController.xib */,
 				4D0DA7CF1D81B3480010E167 /* AppDelegate.h */,
 				4D0DA7D01D81B3480010E167 /* AppDelegate.m */,
-				4D0DA7D21D81B3480010E167 /* ViewController.h */,
-				4D0DA7D31D81B3480010E167 /* ViewController.m */,
-				4D0DA7D51D81B3480010E167 /* Main.storyboard */,
 				4D0DA7D81D81B3480010E167 /* Assets.xcassets */,
-				4D0DA7DA1D81B3480010E167 /* LaunchScreen.storyboard */,
-				4D0DA7DD1D81B3480010E167 /* Info.plist */,
 				4D0DA7CC1D81B3480010E167 /* Supporting Files */,
+				4D1F72B91D81E88800D6F2DC /* Users.h */,
+				4D1F72BA1D81E88800D6F2DC /* Users.m */,
+				4D1F72BC1D81EC8500D6F2DC /* DebugMacros.h */,
 			);
 			path = Onboard;
 			sourceTree = "<group>";
@@ -117,6 +132,9 @@
 		4D0DA7CC1D81B3480010E167 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D0DA7DD1D81B3480010E167 /* Info.plist */,
+				4D0DA7DA1D81B3480010E167 /* LaunchScreen.storyboard */,
+				4D0DA7D51D81B3480010E167 /* Main.storyboard */,
 				4D0DA7CD1D81B3480010E167 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -245,6 +263,8 @@
 			files = (
 				4D0DA7DC1D81B3480010E167 /* LaunchScreen.storyboard in Resources */,
 				4D0DA7D91D81B3480010E167 /* Assets.xcassets in Resources */,
+				4D1F72CC1D83577F00D6F2DC /* DetailViewController.xib in Resources */,
+				4D1F72B81D81E68F00D6F2DC /* ViewController.xib in Resources */,
 				4D0DA7D71D81B3480010E167 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,8 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0DA7D41D81B3480010E167 /* ViewController.m in Sources */,
+				4D1F72CB1D83577F00D6F2DC /* DetailViewController.m in Sources */,
+				4D1F72BB1D81E88800D6F2DC /* Users.m in Sources */,
 				4D0DA7D11D81B3480010E167 /* AppDelegate.m in Sources */,
+				4D1F72B71D81E68F00D6F2DC /* ViewController.m in Sources */,
 				4D0DA7CE1D81B3480010E167 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +520,7 @@
 				4D0DA7F81D81B3480010E167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D0DA7F91D81B3480010E167 /* Build configuration list for PBXNativeTarget "OnboardTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +529,7 @@
 				4D0DA7FB1D81B3480010E167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D0DA7FC1D81B3480010E167 /* Build configuration list for PBXNativeTarget "OnboardUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +538,7 @@
 				4D0DA7FE1D81B3480010E167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
