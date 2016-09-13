@@ -6,84 +6,94 @@
 //  Copyright © 2016 Taqtile. All rights reserved.
 //
 
+//as linhas de separação das células não aparecem no modo visualização 50%
+
 #import "ViewController.h"
 #import "Users.h"
+#import "DetailViewController.h"
+
 
 @interface ViewController ()
 
-@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
-@property (strong, nonatomic) IBOutlet UITableView *tabView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSArray *_tableData;
+    NSArray *_userData;
+}
 
-    NSArray *tableData;
-    NSArray *myArray;
+    //NSArray *viewCount;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    self.navBar.topItem.title = @"Users";
-    self.tabView.bounces = NO;
+    self.title = @"Users";
+    _tableView.bounces = NO;
     
-    tableData = [Users list:@1];
-
+    _tableData = [Users list:@1];
 }
 
-
+//quantidade de linhas
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData count];
+    return [_tableData count];
 }
 
+//customzia a aparência das células
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *TableIdentifier = @"TableItem";
+    const NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@",[[tableData objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    //texto principal
+    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@",[[_tableData objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    
+    //texto detalhe
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
-                                                    [[tableData objectAtIndex:indexPath.row] objectForKey:@"first_name"],
-                                                    [[tableData objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"first_name"],
+                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+    
+    //imagem
+    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: [[_tableData objectAtIndex: indexPath.row] objectForKey:@"avatar"]]]];
+    
+    //seta para detalhes
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
 
+//definição das ações após a seleção da célula
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //DetailViewController *detailViewController;
-    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    //[myArray addObject: [tableData objectAtIndex:indexPath.row]];
+    
+    //allocate your view controller
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    
+    detailViewController.selectedUser = [_tableData objectAtIndex:indexPath.row];
+    NSLog(@"%@",[_tableData objectAtIndex:indexPath.row]);
+                                                  
+    //push it to the navigationController
+    [self.navigationController pushViewController:detailViewController animated:YES];
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+/*
+//altura da célula
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
 }
-
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

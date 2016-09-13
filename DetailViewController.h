@@ -10,5 +10,6 @@
 
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property NSDictionary* selectedUser;
 
 @end

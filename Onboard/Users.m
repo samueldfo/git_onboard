@@ -19,9 +19,9 @@
     
     NSDictionary *user = @{
                            @"id": @1,
-                           @"first_name": @"george",
-                           @"last_name": @"bluth",
-                           @"avatar": @"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+                           @"first_name": @"taq",
+                           @"last_name": @"tile",
+                           @"avatar": @"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Creative-Tail-Animal-dog.svg/128px-Creative-Tail-Animal-dog.svg.png"
                         };
     [listOfUsers addObject:user];
     
@@ -103,6 +103,7 @@
 -(void)incrementViewCount:(NSNumber*)id;
 {
     DLog();
+
 }
 
 -(void)resetViewCount:(NSNumber*)id;

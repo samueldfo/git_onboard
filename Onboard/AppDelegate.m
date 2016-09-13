@@ -23,7 +23,8 @@
     DLog();
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setRootViewController:[ViewController new]];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    [self.window setRootViewController:navController];
     [self.window makeKeyAndVisible];
     
     NSLog(@"%@", [Users list:@1]);

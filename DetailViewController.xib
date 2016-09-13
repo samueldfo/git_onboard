@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
+                <outlet property="tableView" destination="l4m-Q3-mfk" id="4vG-rv-fGC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,17 +16,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-G5-3bY">
-                    <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                    <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-In-tbs">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </tableView>
-                    </subviews>
-                </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l4m-Q3-mfk">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Thp-kp-Z63"/>
+                        <outlet property="delegate" destination="-1" id="8Oq-1y-hmY"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="l4m-Q3-mfk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1rh-LN-r6x"/>
+                <constraint firstItem="l4m-Q3-mfk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8mZ-iC-PXs"/>
+                <constraint firstAttribute="bottom" secondItem="l4m-Q3-mfk" secondAttribute="bottom" id="V1i-cm-k4T"/>
+                <constraint firstAttribute="trailing" secondItem="l4m-Q3-mfk" secondAttribute="trailing" id="gbs-aB-UYk"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
