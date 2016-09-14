@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "Users.h"
 #import "DetailViewController.h"
+#import "User.h"
 
 
 @interface ViewController ()
@@ -20,28 +21,27 @@
 @end
 
 @implementation ViewController {
-    NSArray *_tableData;
-    NSArray *_userData;
+    NSArray<User*> *_tableData;
 }
-
-    //NSArray *viewCount;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
     self.title = @"Users";
+    
     _tableView.bounces = NO;
     
     _tableData = [Users list:@1];
 }
 
-//quantidade de linhas
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_tableData count];
 }
 
-//customzia a aparência das células
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     const NSString *CellIdentifier = @"Cell";
@@ -52,34 +52,34 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    //texto principal
-    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@",[[_tableData objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    User *user = [_tableData objectAtIndex:indexPath.row];
     
-    //texto detalhe
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
-                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"first_name"],
-                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@", user.userId];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
+    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: user.avatar]]];
     
-    //imagem
-    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: [[_tableData objectAtIndex: indexPath.row] objectForKey:@"avatar"]]]];
-    
-    //seta para detalhes
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
+    
+//    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@",[[_tableData objectAtIndex:indexPath.row] objectForKey:@"id"]];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
+//                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"first_name"],
+//                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+//    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: [[_tableData objectAtIndex: indexPath.row] objectForKey:@"avatar"]]]];
+//
     return cell;
 }
 
-//definição das ações após a seleção da célula
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    //allocate your view controller
     DetailViewController *detailViewController = [[DetailViewController alloc] init];
     
-    detailViewController.selectedUser = [_tableData objectAtIndex:indexPath.row];
-    NSLog(@"%@",[_tableData objectAtIndex:indexPath.row]);
-                                                  
-    //push it to the navigationController
+    User *user = [_tableData objectAtIndex:indexPath.row];
+    detailViewController.selectedUser = user;
+    
+    NSLog(@"%@",user);
+    
     [self.navigationController pushViewController:detailViewController animated:YES];
     
 }

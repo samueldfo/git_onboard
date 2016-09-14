@@ -10,14 +10,7 @@
 
 @interface Users : NSObject
 
-//(+) means class method = can be called without an instance of the class being instantiated). So you call it like this:
-//[className classMethod];
-
 +(NSArray*)list:(NSNumber*)page;
-
-//(-) means instance method = needs to instantiate an object first, then you can call the method on the object
-//SomeClass* myInstance = [[SomeClass alloc] init];
-//[myInstance instanceMethod];
 
 -(void)incrementViewCount:(NSNumber*)id;
 
@@ -26,4 +19,12 @@
 -(NSNumber*)getViewCount:(NSNumber*)id;
 
 @end
+
+
+//(+) means class method = can be called without an instance of the class being instantiated). So you call it like this:
+//[className classMethod];
+
+//(-) means instance method = needs to instantiate an object first, then you can call the method on the object
+//SomeClass* myInstance = [[SomeClass alloc] init];
+//[myInstance instanceMethod];
 
