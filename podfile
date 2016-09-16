@@ -3,11 +3,10 @@ source 'https://github.com/indigotech/Specs.git'
 
 platform :ios, '7.0'
 
+target 'Onboard' do
 
-pod 'AFNetworking', '~> 2.5.0'
-pod 'PonyDebugger', '~> 0.4.0'
-
-#restante do arquivo
 pod 'AFNetworking', '~> 2.5.0'
 pod 'PonyDebugger', '~> 0.4.0'
 pod 'Kiwi'
+
+end
